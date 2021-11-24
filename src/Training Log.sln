@@ -5,11 +5,16 @@ VisualStudioVersion = 17.0.31825.309
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForms", "WinForms\WinForms.csproj", "{77B7D7A1-7AA5-400D-8578-D1D93659DC92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{7EB0D82A-E099-4BBB-A9C5-F5EDBA0377BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console", "Console\Console.csproj", "{7EB0D82A-E099-4BBB-A9C5-F5EDBA0377BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{A4150B29-3402-4D5E-A0A2-DCDF5C17DC7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{A4150B29-3402-4D5E-A0A2-DCDF5C17DC7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B6538B24-0569-49B2-9184-4EB698C6EECF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80DAC0B3-79F7-4024-B4BB-580AA81367F4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Error Checker\Tests.csproj", "{F21D4880-8C98-4F57-B8A7-7F5D282F1B0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +34,10 @@ Global
 		{A4150B29-3402-4D5E-A0A2-DCDF5C17DC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4150B29-3402-4D5E-A0A2-DCDF5C17DC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4150B29-3402-4D5E-A0A2-DCDF5C17DC7C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6538B24-0569-49B2-9184-4EB698C6EECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6538B24-0569-49B2-9184-4EB698C6EECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6538B24-0569-49B2-9184-4EB698C6EECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6538B24-0569-49B2-9184-4EB698C6EECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21D4880-8C98-4F57-B8A7-7F5D282F1B0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21D4880-8C98-4F57-B8A7-7F5D282F1B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21D4880-8C98-4F57-B8A7-7F5D282F1B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21D4880-8C98-4F57-B8A7-7F5D282F1B0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
