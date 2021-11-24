@@ -1,4 +1,5 @@
 
+using Library.Planning;
 using System;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -11,6 +12,7 @@ namespace Error_Checker
         static List<MethodInfo> AllMethods = new List<MethodInfo>();
         
         static void Main() {
+
             Type t = typeof(PlanningTests);
             AllMethods.AddRange(t.GetMethods(BindingFlags.Public | BindingFlags.Static));
 

@@ -29,8 +29,14 @@ namespace Library.Planning
                 if (!_events.ContainsKey(ev.Date))
                     _events.Add(ev.Date, ev);
         }
-        public void RemoveEvent(Event e) { _events.Remove(e.Date); }
-        public void RemoveEvent(DateTime d) { _events.Remove(d); }
+        public void RemoveEvent(Event e) {
+            bool t = _events.Remove(e.Date);
+            if (!t) throw new ArgumentException("Event must be contained within Log");
+        }
+        public void RemoveEvent(DateTime d) {
+            bool t = _events.Remove(d);
+            if (!t) throw new ArgumentException("Date must match that of an event within Log");
+        }
 
         public void AddTrainingWeek(TrainingWeek t) {
             if (!_trainingWeeks.ContainsKey(t.StartDate))

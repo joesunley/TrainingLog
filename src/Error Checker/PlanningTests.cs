@@ -128,7 +128,7 @@ namespace Error_Checker
         #region Event
         public static bool Event_ToString() {
             Event e = Sample.Events[2];
-            string s = $"{DateTime.Today.AddMonths(-1).ToUniversalTime().ToString()},British Sprint Champs,Noice,Major";
+            string s = $"{DateTime.Today.AddMonths(7).ToUniversalTime().ToString()},British Sprint Champs,Noice,Major";
 
             return e.ToString().Equals(s);
         }
@@ -147,14 +147,67 @@ namespace Error_Checker
         }
         public static bool TrainingLog_AddEvent_Single_1() {
             TrainingLog t = new();
-            Event e = Sample.Events[2];
-            try {
-                t.AddEvent(e);
-            } catch { return false; }
+            Event e1 = Sample.Events[3];
+            Event e2 = Sample.Events[4];
+            e2.Date = e1.Date;
 
-            return
-                (t.Events.Length == 1) &&
-                (t.Events[0] == e);
+            t.AddEvent(e1);
+            try { t.AddEvent(e2); } catch { return true; }
+            return false;
+        }
+        public static bool TrainingLog_AddEvent_Multiple() {
+            TrainingLog t = new();
+            t.AddEvent(Sample.Events);
+
+            return t.Events.Length == 5;
+        }
+        public static bool TrainingLog_AddEvent_Multiple_1() {
+            TrainingLog t = new();
+            Event[] events = Sample.Events;
+            events[0].Date = Sample.Events[1].Date;
+
+            t.AddEvent(events);
+
+            return t.Events.Length != 5;
+        }
+        public static bool TrainingLog_RemoveEvent_Event() {
+            TrainingLog t = new();
+            t.AddEvent(Sample.Events);
+
+            try {
+                t.RemoveEvent(Sample.Events[2]);
+            } catch { return false; }
+            return t.Events.Length == 4;
+        }
+        public static bool TrainingLog_RemoveEvent_Event_1() {
+            TrainingLog t = new();
+            t.AddEvent(Sample.Events);
+
+            try {
+                t.RemoveEvent(new Event(DateTime.Today.AddDays(-1), "Your Mum", "Haha no", EventType.International));
+            } catch { return true; }
+            return false;
+        }
+        public static bool TrainingLog_RemoveEvent_Date() {
+            TrainingLog t = new();
+            t.AddEvent(Sample.Events);
+
+            try {
+                t.RemoveEvent(DateTime.Today.AddMonths(1));
+            } catch { return false; }
+            return t.Events.Length == 4;
+        }
+        public static bool TrainingLog_RemoveEvent_Date_1() {
+            TrainingLog t = new();
+            t.AddEvent(Sample.Events);
+
+            try {
+                t.RemoveEvent(DateTime.Today.AddMonths(2));
+            } catch { return true; }
+            return false;
+        }
+        public static bool TrainingLog_AddTrainingWeek() {
+            return false;
         }
         #endregion
     }
